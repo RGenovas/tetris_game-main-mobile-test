@@ -4,9 +4,28 @@ body {
   margin: 0;
   background: #000;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
+
+
+@media screen and (max-width: 768px) {
+  /* Stiliai, kurie bus taikomi, kai ekrano plotis yra mažesnis nei 768px */
+  body {
+    font-size: 14px;
+ 
+   
+  }
+  canvas {
+    max-width: 100%; /* Nesitraukia daugiau nei tėvinis elementas */
+    max-height: 50%;
+    margin: auto; /* Centering */
+    display: block; /* Prevents extra space underneath */
+  }
+
+}
 canvas {
   max-width: 100%; /* Nesitraukia daugiau nei tėvinis elementas */
   max-height: 100%;
@@ -17,13 +36,8 @@ canvas {
   display:block;
   position:relative;
   display:flex;
-  gap:10px;
-  top:50%;
-  left:20%;
+  gap:2px;
+  top:45%;
+  left:50%;
  
-}
-
-button {
-  width:50px;
-  height:50px;
 }

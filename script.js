@@ -42,11 +42,8 @@ const colors = [
   "#1ee494",
 ];
 
-if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-  // Current device is a mobile device
-  mobile = true;
-  alert('this is on mobile')
-}
+// 
+
 
 
 //Setup function called once at beginning
@@ -74,7 +71,7 @@ function draw() {
 // Mobile controls 
 document.getElementById("left").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("right").onclick = function(){buttonSubmit(this.value)}
-document.getElementById("down").onclick = function(){buttonSubmit(this.value)}
+// document.getElementById("down").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("flip").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("reset").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("pause").onclick = function(){buttonSubmit(this.value)}
@@ -99,7 +96,9 @@ function buttonSubmit(prop) {
   } else if (buttonVal === 'pause' && pauseGame === true){
     pauseGame = false
   }
-
+  if (buttonVal === 'down') {
+    updateEvery = 2;
+  }
 
 }
 

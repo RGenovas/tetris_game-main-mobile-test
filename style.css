@@ -21,15 +21,7 @@ body {
   body {
     font-size: 14px;
   }
-  .mobile-controls {
-    display:block;
-    position:relative;
-    display:flex;
-    gap:2px;
-    top:45%;
-    left:50%;
-   
-  }
+
 }
 canvas {
   max-width: 100%; /* Nesitraukia daugiau nei tėvinis elementas */
@@ -37,12 +29,12 @@ canvas {
   margin: auto; /* Centering */
   display: block; /* Prevents extra space underneath */
 }
-
-
-
-@media (min-width: 600px) and (min-height: 540px) {
-  canvas {
-    width: 600px;
-    height: 540px;
-  }
+.mobile-controls {
+  display:block;
+  position:relative;
+  display:flex;
+  gap:2px;
+  top:45%;
+  left:50%;
+ 
 }

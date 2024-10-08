@@ -18,9 +18,7 @@ body {
   body {
     font-size: 14px;
   }
-  canvas {
-    height:100%;
-  }
+
   .mobile-controls {
     width:100px;
     position:relative;

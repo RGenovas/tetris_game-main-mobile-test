@@ -8,8 +8,10 @@ body {
 
 .mobile-controls {
   display:none;
+}
 
-
+.controls {
+  display:none;
 }
 
 
@@ -18,6 +20,11 @@ body {
   body {
     font-size: 14px;
   }
+
+  canvas {
+    margin: 0
+  }
+
 
   .mobile-controls {
     width:100px;
@@ -34,9 +41,11 @@ body {
    
    }
    .controls {
+    display:block;
     position:relative;
-    left:71%;
-    top:68%;
+    right:0.5%;
+    top:7%;
+
    }
   
 
@@ -55,6 +64,7 @@ body {
     grid-area: godown;
   }
   
+
 
   }
    
@@ -128,4 +138,9 @@ canvas {
 	&:hover {
 		background: #0000FC;
 	}
+}
+
+
+.reset-btn{
+  background-color: #581900;
 }

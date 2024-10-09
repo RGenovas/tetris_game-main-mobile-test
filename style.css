@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 body {
-
-  background-color: black;
+  margin: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+
 }
 
 .mobile-controls {
@@ -18,20 +22,24 @@ body {
 @media screen and (max-width: 768px) {
   /* Stiliai, kurie bus taikomi, kai ekrano plotis yra mažesnis nei 768px */
   body {
-    font-size: 14px;
+    display:block;
+    width:100%;
+    padding:0;
+    margin:0;
   }
-
-  canvas {
-    margin: 0 0;
-  }
-
+canvas {
+  width:100%;
+  padding:0;
+}
+ 
 
   .mobile-controls {
     width:100px;
-    position:relative;
-    display:flex;
-    top:93%;
-    left:10%;
+    position:absolute;
+    top:35em;
+    left: 0.5em;
+
+    
     display:grid;
     gap:10px;
     grid-template-columns: 1fr 1fr 1fr ;
@@ -42,9 +50,11 @@ body {
    }
    .controls {
     display:block;
-    position:relative;
-    right:0.5%;
-    top:7%;
+    position:absolute;
+    top:35em;
+    right: 0.5em;
+
+
 
    }
   
@@ -75,7 +85,6 @@ body {
 canvas {
   max-width: 100%; /* Nesitraukia daugiau nei tėvinis elementas */
   max-height: 100%;
-  margin: auto; /* Centering */
   display: block; /* Prevents extra space underneath */
 }
 
@@ -84,12 +93,7 @@ canvas {
 
 
 
-@media (min-width: 600px) and (min-height: 540px) {
-  canvas {
-    width: 600px;
-    height: 540px;
-  }
-}
+
 
 .btn {
 	background: #7C7C7C;
@@ -109,7 +113,7 @@ canvas {
 	
 	&:focus,
 	&:hover {
-		background: #BCBCBC;
+		background: #0c0c0c;
 	}
 }
 
@@ -143,4 +147,8 @@ canvas {
 
 .reset-btn{
   background-color: #581900;
+}
+
+.pause-btn{
+  background-color: #aacf23;
 }

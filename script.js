@@ -1,4 +1,5 @@
 
+
 //Define the sizze of each grid space
 const gridSpace = 30;
 
@@ -12,7 +13,7 @@ let lineFades = [];
 let gridWorkers = [];
 
 let currentScore = 0;
-let currentLevel = 1;
+let currentLevel = 4;
 let linesCleared = 0;
 
 let ticks = 0;
@@ -30,7 +31,6 @@ const gameEdgeRight = 450;
 
 
 
-
 // Define the colors for the pieces
 const colors = [
   "#00204a",
@@ -42,8 +42,9 @@ const colors = [
   "#1ee494",
 ];
 
-// 
 
+
+// 
 
 
 //Setup function called once at beginning
@@ -66,28 +67,44 @@ function draw() {
   const colorBackground = "#e1eeb0";
 
   //Set the background color
-  background(colorBackground);
+background(colorBackground);
+
+
 
 // Mobile controls 
 document.getElementById("left").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("right").onclick = function(){buttonSubmit(this.value)}
-// document.getElementById("down").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("flip").onclick = function(){buttonSubmit(this.value)}
+document.getElementById("down").onmousedown = function(){buttonSubmit(this.value)}
+document.getElementById("down").onmouseup = function(){buttonSubmit('up')}
+
+
 document.getElementById("reset").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("pause").onclick = function(){buttonSubmit(this.value)}
+
+
 
 // Handle mobile buttons
 function buttonSubmit(prop) {
   buttonVal = prop
-  if (buttonVal === 'left') {
+  if (buttonVal === 'left' && pauseGame === false) {
     fallingPiece.input(LEFT_ARROW);
-  }else if (buttonVal === 'right'){
+  }else if (buttonVal === 'right' && pauseGame === false){
     fallingPiece.input(RIGHT_ARROW);
   }
-  if (buttonVal === 'flip') {
+  if (buttonVal === 'flip' && pauseGame === false) {
     fallingPiece.input(UP_ARROW);
+    console.log(buttonVal)
   }
-  if (buttonVal === 'reset') {
+  if (buttonVal === 'down' && pauseGame === false) {
+     updateEvery = 2
+     console.log('down')
+  }
+  if (buttonVal === 'up' && pauseGame === false) {
+      updateEvery = updateEveryCurent
+      console.log('up')
+}
+  if (buttonVal === 'reset' && pauseGame === false) {
     resetGame()
   }
   if (buttonVal === 'pause' && pauseGame === false) {
@@ -96,11 +113,12 @@ function buttonSubmit(prop) {
   } else if (buttonVal === 'pause' && pauseGame === true){
     pauseGame = false
   }
-  if (buttonVal === 'down') {
-    updateEvery = 2;
-  }
-
+  
+  
+return buttonVal
 }
+
+
 
 
 
@@ -175,10 +193,11 @@ function buttonSubmit(prop) {
   fallingPiece.show();
 
   //Speed up the falling piece if the down arrow is pressed
-  if (keyIsDown(DOWN_ARROW)) {
+  if (keyIsDown(DOWN_ARROW) || buttonVal === 'down' ) {
     updateEvery = 2;
   } else {
     updateEvery = updateEveryCurent;
+
   }
 
 
@@ -268,9 +287,6 @@ function keyPressed() {
     if (keyCode === UP_ARROW) {
       fallingPiece.input(UP_ARROW);
     }
-  //  if (buttonVal === 'left') {
-  //   fallingPiece.input(LEFT_ARROW);
-  //  }
     
   }
 

@@ -76,6 +76,8 @@ document.getElementById("left").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("right").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("flip").onclick = function(){buttonSubmit(this.value)}
 document.getElementById("down").onmousedown = function(){buttonSubmit(this.value)}
+document.getElementById("down").ontouchstart = function(){buttonSubmit(this.value)}
+document.getElementById("down").ontouchend = function(){buttonSubmit('up')}
 document.getElementById("down").onmouseup = function(){buttonSubmit('up')}
 
 

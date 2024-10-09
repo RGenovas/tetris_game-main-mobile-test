@@ -13,7 +13,7 @@ let lineFades = [];
 let gridWorkers = [];
 
 let currentScore = 0;
-let currentLevel = 4;
+let currentLevel = 1;
 let linesCleared = 0;
 
 let ticks = 0;
